@@ -11,7 +11,7 @@ pipeline {
             steps { sh 'mvn package'}
         }
         stage ('Deployying the Maven Webapp into tomcat Server') {
-            steps { sh 'sudo scp -i /home/ec2-user/keyfiles.pem /var/lib/jenkins/workspace/GitConnect_Repos-Webapp_main/target/artifactid.war ec2-user@172.31.3.159:/usr/share/tomcat/webapps'}
+            steps { sh 'sudo scp -i /home/ec2-user/keyfile.pem /var/lib/jenkins/workspace/GitConnect_Repos-Webapp_main/target/artifactid.war ec2-user@172.31.3.159:/usr/share/tomcat/webapps'}
         }
     }
 }
